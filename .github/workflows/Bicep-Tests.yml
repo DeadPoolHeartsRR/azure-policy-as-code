@@ -74,7 +74,7 @@ jobs:
       uses: azure/CLI@v1
       with:
         inlineScript: |
-          az deployment sub create -n nonprod-bicep-cd -f ./Bicep/Level3/main.bicep -l eastus -p ./Bicep/Level3/params-nonprod.json -o none
+          az deployment sub create -n nonprod-bicep-cd -f ./Bicep/learn/Level3/main.bicep -l eastus -p ./Bicep/learn/Level3/params-nonprod.json -o none
     - name: Sleep for 30s
       if: ${{ steps.bicepCD.outcome == 'failure' && steps.bicepCD.conclusion == 'success' }}
       uses: juliangruber/sleep-action@v1
@@ -85,7 +85,7 @@ jobs:
       uses: azure/CLI@v1
       with:
         inlineScript: |
-          az deployment sub create -n nonprod-bicep-cd -f ./Bicep/Level3/main.bicep -l eastus -p ./Bicep/Level3/params-nonprod.json -o none
+          az deployment sub create -n nonprod-bicep-cd -f ./Bicep/learn/Level3/main.bicep -l eastus -p ./Bicep/learn/Level3/params-nonprod.json -o none
 
   Prod-Bicep-Deployment:
     needs: NonProd-Bicep-Deployment
@@ -102,7 +102,7 @@ jobs:
       uses: azure/CLI@v1
       with:
         inlineScript: |
-          az deployment sub create -n prod-bicep-cd -f ./Bicep/Level3/main.bicep -l eastus -p ./Bicep/Level3/params-prod.json -o none
+          az deployment sub create -n prod-bicep-cd -f ./Bicep/learn/Level3/main.bicep -l eastus -p ./Bicep/learn/Level3/params-prod.json -o none
     - name: Sleep for 30s
       if: ${{ steps.bicepCD.outcome == 'failure' && steps.bicepCD.conclusion == 'success' }}
       uses: juliangruber/sleep-action@v1
@@ -113,4 +113,4 @@ jobs:
       uses: azure/CLI@v1
       with:
         inlineScript: |
-          az deployment sub create -n prod-bicep-cd -f ./Bicep/Level3/main.bicep -l eastus -p ./Bicep/Level3/params-prod.json -o none
+          az deployment sub create -n prod-bicep-cd -f ./Bicep/learn/Level3/main.bicep -l eastus -p ./Bicep/learn/Level3/params-prod.json -o none
