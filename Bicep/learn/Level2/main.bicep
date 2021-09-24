@@ -9,7 +9,7 @@ param mandatoryTag1Value string //level2
 param assignmentEnforcementMode string = 'Default'
 param listOfAllowedLocations array = [
   'eastus'
-  'australiasoutheast'
+  'eastus2'
 ]
 param listOfAllowedSKUs array = [
   'Standard_B1ls'

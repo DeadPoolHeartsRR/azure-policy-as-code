@@ -7,14 +7,6 @@
 * Targeting multiple Azure environments
 * Uses parameter files for environment-specfic values passed during deployment
 
-[YouTube Video Timestamp 50m 3s](https://www.youtube.com/watch?v=qpnMJXw6pIg&t=50m3s)
-
-## Minimum Prerequisities
-
-* [azure-cli](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli) version 2.20.0
-* bicep cli version 0.3.255 (589f0375df)
-* [bicep](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-bicep) 0.3.1 vscode extension
-
 ## Parameters
 
 **Defaults**
@@ -27,7 +19,7 @@ param mandatoryTag1Value string //level2
 param assignmentEnforcementMode string = 'Default'
 param listOfAllowedLocations array = [
   'eastus'
-  'australiasoutheast'
+  'eastus2'
 ]
 param listOfAllowedSKUs array = [
   'Standard_B1ls'

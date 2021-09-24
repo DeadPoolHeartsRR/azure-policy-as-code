@@ -29,7 +29,7 @@ param mandatoryTag1Key string = 'BicepTagDemo'
 param mandatoryTag1Value string = 'tempvalue'
 param listOfAllowedLocations array = [
   'eastus'
-  'australiasoutheast'
+  'eastus2'
 ]
 param listOfAllowedSKUs array = [
   'Standard_B1ls'
