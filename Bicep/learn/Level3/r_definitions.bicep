@@ -32,7 +32,7 @@ resource policy 'Microsoft.Authorization/policyDefinitions@2020-09-01' = {
           displayName: 'Mandatory Tag ${mandatoryTag1Key}'
           description: 'Name of the tag, such as ${mandatoryTag1Key}'
         }
-        defaultValue: 'BicepTagName'
+        defaultValue: 'BicepTagDemo'
       }
       tagValue: {
         type: 'String'

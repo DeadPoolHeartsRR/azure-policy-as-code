@@ -22,7 +22,7 @@
 param policySource string = 'csc/azure-policy-as-code'
 param policyCategory string = 'Custom'
 param assignmentIdentityLocation string //level2
-param mandatoryTag1Key string = 'BicepTagName' //level2
+param mandatoryTag1Key string = 'BicepTagDemo' //level2
 param mandatoryTag1Value string //level2
 param assignmentEnforcementMode string = 'Default'
 param listOfAllowedLocations array = [

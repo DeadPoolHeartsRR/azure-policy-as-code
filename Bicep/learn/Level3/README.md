@@ -25,7 +25,7 @@ param policySource string = 'csc/azure-policy-as-code'
 param policyCategory string = 'Custom'
 param assignmentEnforcementMode string = 'Default'
 param assignmentIdentityLocation string = 'eastus'
-param mandatoryTag1Key string = 'BicepTagName'
+param mandatoryTag1Key string = 'BicepTagDemo'
 param mandatoryTag1Value string = 'tempvalue'
 param listOfAllowedLocations array = [
   'eastus'

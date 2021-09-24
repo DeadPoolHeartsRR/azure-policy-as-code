@@ -31,7 +31,7 @@
             "value": "eastus"
         },
         "mandatoryTag1Key": {
-            "value": "BicepTagName"
+            "value": "BicepTagDemo"
         },
         "mandatoryTag1Value": {
             "value": "Prod"
