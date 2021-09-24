@@ -4,7 +4,7 @@ targetScope = 'subscription'
 param policySource string = 'csc/azure-policy-as-code'
 param policyCategory string = 'Custom'
 param assignmentIdentityLocation string //level2
-param mandatoryTag1Key string = 'BicepTagName' //level2
+param mandatoryTag1Key string = 'BicepTagDemo' //level2
 param mandatoryTag1Value string //level2
 param assignmentEnforcementMode string = 'Default'
 param listOfAllowedLocations array = [
@@ -54,7 +54,7 @@ resource policy 'Microsoft.Authorization/policyDefinitions@2020-09-01' = {
           displayName: 'Mandatory Tag ${mandatoryTag1Key}'
           description: 'Name of the tag, such as ${mandatoryTag1Key}'
         }
-        defaultValue: 'BicepTagName'
+        defaultValue: 'BicepTagDemo'
       }
       tagValue: {
         type: 'String'
