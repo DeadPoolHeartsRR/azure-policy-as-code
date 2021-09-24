@@ -25,7 +25,7 @@ Learning resources :books:
 * `outputs.tf`
 * `variables.tf`
 
-![ModuleLayout](https://github.com/globalbao/terraform-azurerm-policy/blob/master/images/terraform-azurepolicy-modulelayout.png?raw=true)
+![ModuleLayout](https://github.com/csc/terraform-azurerm-policy/blob/master/images/terraform-azurepolicy-modulelayout.png?raw=true)
 
 ## Terraform resources (main.tf)
 
