@@ -7,7 +7,7 @@ param assignmentEnforcementMode string = 'Default'
 param assignmentIdentityLocation string = 'eastus'
 param mandatoryTag1Key string = 'BicepTagDemo'
 param mandatoryTag1Value string = 'tempvalue'
-param nonComplianceMessageContactEmail string = 'tempemail@mail.com'
+param nonComplianceMessageContactEmail string = 'tbd@cscdemo.com'
 param listOfAllowedLocations array = [
   'eastus'
   'eastus2'

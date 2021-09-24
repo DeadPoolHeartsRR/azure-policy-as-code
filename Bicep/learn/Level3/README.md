@@ -9,13 +9,6 @@
 * Targeting multiple Azure environments with authentication via GitHub secrets
 * Uses parameter files for environment-specfic values passed during deployment
 
-[YouTube Video Timestamp 1h 11m 45s](https://www.youtube.com/watch?v=qpnMJXw6pIg&t=1h11m45s)
-
-## Minimum Prerequisities
-
-* [azure-cli](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli) version 2.20.0
-* bicep cli version 0.3.255 (589f0375df)
-* [bicep](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-bicep) 0.3.1 vscode extension
 
 ## Parameters
 
