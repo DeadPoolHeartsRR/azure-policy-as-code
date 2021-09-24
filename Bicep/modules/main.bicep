@@ -2,7 +2,7 @@ targetScope = 'subscription'
 
 // PARAMETERS
 param resourceGroupName string = 'BicepExampleRG'
-param resourceGrouplocation string = 'australiaeast'
+param resourceGrouplocation string = 'eastus'
 param actionGroupName string = 'BicepExampleAG'
 param actionGroupEnabled bool = true
 param actionGroupShortName string = 'bicepag'
@@ -10,7 +10,7 @@ param actionGroupEmailName string = 'jloudon'
 param actionGroupEmail string = 'testemail@mail.com'
 param actionGroupAlertSchema bool = true
 param assignmentEnforcementMode string = 'Default'
-param assignmentIdentityLocation string = 'australiaeast'
+param assignmentIdentityLocation string = 'eastus'
 param dcrResourceID string = '0123456789'
 param policySource string = 'csc/azure-policy-as-code'
 param policyCategory string = 'Custom'

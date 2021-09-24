@@ -40,7 +40,7 @@ az bicep build -f ./main.bicep
 
 # required steps
 az login
-az deployment sub create -f ./main.bicep -l australiaeast
+az deployment sub create -f ./main.bicep -l eastus
 
 # optional step to trigger a subscription-level policy compliance scan 
 az policy state trigger-scan --no-wait

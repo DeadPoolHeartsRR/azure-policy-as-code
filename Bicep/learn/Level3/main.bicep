@@ -4,12 +4,12 @@ targetScope = 'subscription'
 param policySource string = 'csc/azure-policy-as-code'
 param policyCategory string = 'Custom'
 param assignmentEnforcementMode string = 'Default'
-param assignmentIdentityLocation string = 'australiaeast'
+param assignmentIdentityLocation string = 'eastus'
 param mandatoryTag1Key string = 'BicepTagName'
 param mandatoryTag1Value string = 'tempvalue'
 param nonComplianceMessageContactEmail string = 'tempemail@mail.com'
 param listOfAllowedLocations array = [
-  'australiaeast'
+  'eastus'
   'australiasoutheast'
 ]
 param listOfAllowedSKUs array = [

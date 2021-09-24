@@ -4,7 +4,7 @@ resource "azurerm_subscription_policy_assignment" "monitoring_governance" {
   policy_definition_id = var.monitoring_governance_policyset_id
   description          = "Assignment of the Monitoring Governance initiative to subscription."
   display_name         = "Monitoring Governance"
-  location             = "australiaeast"
+  location             = "eastus"
   identity { type = "SystemAssigned" }
 }
 
@@ -14,7 +14,7 @@ resource "azurerm_subscription_policy_assignment" "tag_governance" {
   policy_definition_id = var.tag_governance_policyset_id
   description          = "Assignment of the Tag Governance initiative to subscription."
   display_name         = "Tag Governance"
-  location             = "australiaeast"
+  location             = "eastus"
   identity { type = "SystemAssigned" }
 }
 
@@ -32,7 +32,7 @@ resource "azurerm_subscription_policy_assignment" "security_governance" {
   policy_definition_id = var.security_governance_policyset_id
   description          = "Assignment of the Security Governance initiative to subscription."
   display_name         = "Security Governance"
-  location             = "australiaeast"
+  location             = "eastus"
   identity { type = "SystemAssigned" }
 }
 
@@ -50,6 +50,6 @@ resource "azurerm_subscription_policy_assignment" "logging_governance" {
   policy_definition_id = var.logging_governance_policyset_id
   description          = "Assignment of the Logging Governance initiative to subscription."
   display_name         = "Logging Governance"
-  location             = "australiaeast"
+  location             = "eastus"
   identity { type = "SystemAssigned" }
 }

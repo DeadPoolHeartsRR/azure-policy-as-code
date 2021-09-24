@@ -34,7 +34,7 @@ az bicep build -f ./main.bicep
 
 # required steps
 az login
-az deployment sub create -f ./main.bicep -l australiaeast --confirm-with-what-if
+az deployment sub create -f ./main.bicep -l eastus --confirm-with-what-if
 
 # optional step to trigger a subscription-level policy compliance scan 
 az policy state trigger-scan --no-wait
@@ -103,7 +103,7 @@ jobs:
       uses: azure/CLI@v1
       with:
         inlineScript: |
-          az deployment sub create -n devtest-bicep-cd -f ./main.bicep -l australiaeast -o none
+          az deployment sub create -n devtest-bicep-cd -f ./main.bicep -l eastus -o none
     - name: Sleep for 30s
       if: ${{ steps.bicepCD.outcome == 'failure' && steps.bicepCD.conclusion == 'success' }}
       uses: juliangruber/sleep-action@v1
@@ -114,7 +114,7 @@ jobs:
       uses: azure/CLI@v1
       with:
         inlineScript: |
-          az deployment sub create -n devtest-bicep-cd -f ./main.bicep -l australiaeast -o none
+          az deployment sub create -n devtest-bicep-cd -f ./main.bicep -l eastus -o none
 
   NONPROD-BICEP-CD:
     needs: DEVTEST-BICEP-CD
@@ -131,7 +131,7 @@ jobs:
       uses: azure/CLI@v1
       with:
         inlineScript: |
-          az deployment sub create -n nonprod-bicep-cd -f ./main.bicep -l australiaeast -o none
+          az deployment sub create -n nonprod-bicep-cd -f ./main.bicep -l eastus -o none
     - name: Sleep for 30s
       if: ${{ steps.bicepCD.outcome == 'failure' && steps.bicepCD.conclusion == 'success' }}
       uses: juliangruber/sleep-action@v1
@@ -142,7 +142,7 @@ jobs:
       uses: azure/CLI@v1
       with:
         inlineScript: |
-          az deployment sub create -n nonprod-bicep-cd -f ./main.bicep -l australiaeast -o none
+          az deployment sub create -n nonprod-bicep-cd -f ./main.bicep -l eastus -o none
 
   PROD-BICEP-CD:
     needs: NONPROD-BICEP-CD
@@ -159,7 +159,7 @@ jobs:
       uses: azure/CLI@v1
       with:
         inlineScript: |
-          az deployment sub create -n prod-bicep-cd -f ./main.bicep -l australiaeast -o none
+          az deployment sub create -n prod-bicep-cd -f ./main.bicep -l eastus -o none
     - name: Sleep for 30s
       if: ${{ steps.bicepCD.outcome == 'failure' && steps.bicepCD.conclusion == 'success' }}
       uses: juliangruber/sleep-action@v1
@@ -170,5 +170,5 @@ jobs:
       uses: azure/CLI@v1
       with:
         inlineScript: |
-          az deployment sub create -n prod-bicep-cd -f ./main.bicep -l australiaeast -o none
+          az deployment sub create -n prod-bicep-cd -f ./main.bicep -l eastus -o none
 ```

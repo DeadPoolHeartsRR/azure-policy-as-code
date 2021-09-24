@@ -8,7 +8,7 @@ param mandatoryTag1Key string = 'BicepTagName' //level2
 param mandatoryTag1Value string //level2
 param assignmentEnforcementMode string = 'Default'
 param listOfAllowedLocations array = [
-  'australiaeast'
+  'eastus'
   'australiasoutheast'
 ]
 param listOfAllowedSKUs array = [

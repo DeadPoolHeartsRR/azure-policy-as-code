@@ -24,11 +24,11 @@
 param policySource string = 'csc/azure-policy-as-code'
 param policyCategory string = 'Custom'
 param assignmentEnforcementMode string = 'Default'
-param assignmentIdentityLocation string = 'australiaeast'
+param assignmentIdentityLocation string = 'eastus'
 param mandatoryTag1Key string = 'BicepTagName'
 param mandatoryTag1Value string = 'tempvalue'
 param listOfAllowedLocations array = [
-  'australiaeast'
+  'eastus'
   'australiasoutheast'
 ]
 param listOfAllowedSKUs array = [
@@ -60,15 +60,15 @@ az account list
 
 # required steps - deploy to devtest
 az account set -s 'xxxx-xxxx-xxxx-xxxx-xxxx'
-az deployment sub create -f ./main.bicep -l australiaeast -p ./params-devtest.json
+az deployment sub create -f ./main.bicep -l eastus -p ./params-devtest.json
 
 # required steps - deploy to nonprod
 az account set -s 'xxxx-xxxx-xxxx-xxxx-xxxx'
-az deployment sub create -f ./main.bicep -l australiaeast -p ./params-nonprod.json
+az deployment sub create -f ./main.bicep -l eastus -p ./params-nonprod.json
 
 # required steps - deploy to prod
 az account set -s 'xxxx-xxxx-xxxx-xxxx-xxxx'
-az deployment sub create -f ./main.bicep -l australiaeast -p ./params-prod.json
+az deployment sub create -f ./main.bicep -l eastus -p ./params-prod.json
 
 # optional step to trigger a subscription-level policy compliance scan (uses current sub context)
 az policy state trigger-scan --no-wait
@@ -102,7 +102,7 @@ jobs:
       uses: azure/CLI@v1
       with:
         inlineScript: |
-          az deployment sub create -n devtest-bicep-cd -f ./Bicep/Level3/main.bicep -l australiaeast -p ./Bicep/Level3/params-devtest.json -o none
+          az deployment sub create -n devtest-bicep-cd -f ./Bicep/Level3/main.bicep -l eastus -p ./Bicep/Level3/params-devtest.json -o none
     - name: Sleep for 30s
       if: ${{ steps.bicepCD.outcome == 'failure' && steps.bicepCD.conclusion == 'success' }}
       uses: juliangruber/sleep-action@v1
@@ -113,7 +113,7 @@ jobs:
       uses: azure/CLI@v1
       with:
         inlineScript: |
-          az deployment sub create -n devtest-bicep-cd -f ./Bicep/Level3/main.bicep -l australiaeast -p ./Bicep/Level3/params-devtest.json -o none
+          az deployment sub create -n devtest-bicep-cd -f ./Bicep/Level3/main.bicep -l eastus -p ./Bicep/Level3/params-devtest.json -o none
 
   NONPROD-BICEP-CD:
     needs: DEVTEST-BICEP-CD
@@ -130,7 +130,7 @@ jobs:
       uses: azure/CLI@v1
       with:
         inlineScript: |
-          az deployment sub create -n nonprod-bicep-cd -f ./Bicep/Level3/main.bicep -l australiaeast -p ./Bicep/Level3/params-nonprod.json -o none
+          az deployment sub create -n nonprod-bicep-cd -f ./Bicep/Level3/main.bicep -l eastus -p ./Bicep/Level3/params-nonprod.json -o none
     - name: Sleep for 30s
       if: ${{ steps.bicepCD.outcome == 'failure' && steps.bicepCD.conclusion == 'success' }}
       uses: juliangruber/sleep-action@v1
@@ -141,7 +141,7 @@ jobs:
       uses: azure/CLI@v1
       with:
         inlineScript: |
-          az deployment sub create -n nonprod-bicep-cd -f ./Bicep/Level3/main.bicep -l australiaeast -p ./Bicep/Level3/params-nonprod.json -o none
+          az deployment sub create -n nonprod-bicep-cd -f ./Bicep/Level3/main.bicep -l eastus -p ./Bicep/Level3/params-nonprod.json -o none
 
   PROD-BICEP-CD:
     needs: NONPROD-BICEP-CD
@@ -158,7 +158,7 @@ jobs:
       uses: azure/CLI@v1
       with:
         inlineScript: |
-          az deployment sub create -n prod-bicep-cd -f ./Bicep/Level3/main.bicep -l australiaeast -p ./Bicep/Level3/params-prod.json -o none
+          az deployment sub create -n prod-bicep-cd -f ./Bicep/Level3/main.bicep -l eastus -p ./Bicep/Level3/params-prod.json -o none
     - name: Sleep for 30s
       if: ${{ steps.bicepCD.outcome == 'failure' && steps.bicepCD.conclusion == 'success' }}
       uses: juliangruber/sleep-action@v1
@@ -169,7 +169,7 @@ jobs:
       uses: azure/CLI@v1
       with:
         inlineScript: |
-          az deployment sub create -n prod-bicep-cd -f ./Bicep/Level3/main.bicep -l australiaeast -p ./Bicep/Level3/params-prod.json -o none
+          az deployment sub create -n prod-bicep-cd -f ./Bicep/Level3/main.bicep -l eastus -p ./Bicep/Level3/params-prod.json -o none
 ```
 
 ### Azure Resource Manager (ARM) Template References

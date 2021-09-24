@@ -7,7 +7,7 @@
         },
         "listOfAllowedLocations": {
             "value": [
-                "australiaeast",
+                "eastus",
                 "australiasoutheast"
             ]
         },
@@ -28,7 +28,7 @@
             ]
         },
         "assignmentIdentityLocation": {
-            "value": "australiaeast"
+            "value": "eastus"
         },
         "mandatoryTag1Key": {
             "value": "BicepTagName"

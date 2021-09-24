@@ -26,7 +26,7 @@ param mandatoryTag1Key string = 'BicepTagName' //level2
 param mandatoryTag1Value string //level2
 param assignmentEnforcementMode string = 'Default'
 param listOfAllowedLocations array = [
-  'australiaeast'
+  'eastus'
   'australiasoutheast'
 ]
 param listOfAllowedSKUs array = [
@@ -56,11 +56,11 @@ az account list
 
 # required steps - deploy to devtest
 az account set -s 'xxxx-xxxx-xxxx-xxxx-xxxx'
-az deployment sub create -f ./main.bicep -l australiaeast -p ./params-devtest.json
+az deployment sub create -f ./main.bicep -l eastus -p ./params-devtest.json
 
 # required steps - deploy to nonprod
 az account set -s 'xxxx-xxxx-xxxx-xxxx-xxxx'
-az deployment sub create -f ./main.bicep -l australiaeast -p ./params-nonprod.json
+az deployment sub create -f ./main.bicep -l eastus -p ./params-nonprod.json
 
 # optional step to trigger a subscription-level policy compliance scan (uses current sub context)
 az policy state trigger-scan --no-wait

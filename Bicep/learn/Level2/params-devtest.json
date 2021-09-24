@@ -4,7 +4,7 @@
     "parameters": {
         "listOfAllowedLocations": {
             "value": [
-                "australiaeast",
+                "eastus",
                 "australiasoutheast",
                 "eastus",
                 "eastus2",
@@ -24,7 +24,7 @@
             ]
         },
         "assignmentIdentityLocation": {
-            "value": "australiaeast"
+            "value": "eastus"
         },
         "mandatoryTag1Value": {
             "value": "DevTest"
