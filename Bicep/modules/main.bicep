@@ -6,18 +6,18 @@ param resourceGrouplocation string = 'eastus'
 param actionGroupName string = 'BicepExampleAG'
 param actionGroupEnabled bool = true
 param actionGroupShortName string = 'bicepag'
-param actionGroupEmailName string = 'jloudon'
+param actionGroupEmailName string = 'rsanchez'
 param actionGroupEmail string = 'testemail@mail.com'
 param actionGroupAlertSchema bool = true
 param assignmentEnforcementMode string = 'Default'
 param assignmentIdentityLocation string = 'eastus'
 param dcrResourceID string = '0123456789'
-param policySource string = 'csc/azure-policy-as-code'
+param policySource string = 'demo/azure-policy-as-code'
 param policyCategory string = 'Custom'
-param mandatoryTag1Key string = 'CostCentre'
+param mandatoryTag1Key string = 'CostCenter'
 param mandatoryTag1Value string = '123456'
 param mandatoryTag2Key string = 'Owner'
-param tagOwnerValue string = 'HBO Intern'
+param tagOwnerValue string = 'Bob Smith'
 
 // OUTPUTS
 
