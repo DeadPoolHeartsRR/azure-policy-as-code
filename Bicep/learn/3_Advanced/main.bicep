@@ -1,13 +1,13 @@
 targetScope = 'subscription'
 
 // PARAMETERS
-param policySource string = 'csc/azure-policy-as-code'
+param policySource string = 'demo/azure-policy-as-code'
 param policyCategory string = 'Custom'
 param assignmentEnforcementMode string = 'Default'
 param assignmentIdentityLocation string = 'eastus'
 param mandatoryTag1Key string = 'BicepTagDemo'
 param mandatoryTag1Value string = 'tempvalue'
-param nonComplianceMessageContactEmail string = 'tbd@cscdemo.com'
+param nonComplianceMessageContactEmail string = 'tbd@xyzdemo.com'
 param listOfAllowedLocations array = [
   'eastus'
   'eastus2'

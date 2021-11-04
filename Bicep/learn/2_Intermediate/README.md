@@ -1,4 +1,4 @@
-# Azure-Policy-As-Code/Bicep/Learn/Level2
+# Azure-Policy-As-Code/Bicep/Learn/Intermediate
 
 * Uses built-in policies and custom policies
 * Uses multiple initiatives and assignments
@@ -10,12 +10,13 @@
 ## Parameters
 
 **Defaults**
+
 ```bicep
-param policySource string = 'csc/azure-policy-as-code'
+param policySource string = 'demo/azure-policy-as-code'
 param policyCategory string = 'Custom'
-param assignmentIdentityLocation string //level2
-param mandatoryTag1Key string = 'BicepTagDemo' //level2
-param mandatoryTag1Value string //level2
+param assignmentIdentityLocation string //Intermediate
+param mandatoryTag1Key string = 'BicepTagDemo' //Intermediate
+param mandatoryTag1Value string //Intermediate
 param assignmentEnforcementMode string = 'Default'
 param listOfAllowedLocations array = [
   'eastus'
@@ -33,6 +34,7 @@ param listOfAllowedSKUs array = [
 ```
 
 **Environment-specific**
+
 * params-devtest.json
 * params-nonprod.json
 

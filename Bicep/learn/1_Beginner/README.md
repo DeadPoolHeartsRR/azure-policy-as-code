@@ -1,16 +1,16 @@
-# Azure-Policy-As-Code/Bicep/Learn/Level1
+# Azure-Policy-As-Code/Bicep/Learn/Beginner
 
 * Uses built-in policies
 * Uses an initiative and assignment
 * 1x main.bicep
 * Manual CLI deployment
 
-
 ## Parameters
 
 **Defaults**
+
 ```bicep
-param policySource string = 'csc/azure-policy-as-code'
+param policySource string = 'demo/azure-policy-as-code'
 param policyCategory string = 'Custom'
 param assignmentEnforcementMode string = 'Default'
 param listOfAllowedLocations array = [

@@ -1,11 +1,11 @@
 targetScope = 'subscription'
 
 // PARAMETERS
-param policySource string = 'csc/azure-policy-as-code'
+param policySource string = 'demo/azure-policy-as-code'
 param policyCategory string = 'Custom'
-param assignmentIdentityLocation string //level2
-param mandatoryTag1Key string = 'BicepTagDemo' //level2
-param mandatoryTag1Value string //level2
+param assignmentIdentityLocation string //Intermediate
+param mandatoryTag1Key string = 'BicepTagDemo' //Intermediate
+param mandatoryTag1Value string //Intermediate
 param assignmentEnforcementMode string = 'Default'
 param listOfAllowedLocations array = [
   'eastus'
@@ -24,18 +24,18 @@ param listOfAllowedSKUs array = [
 // VARIABLES
 var initiative1Name = 'Initiative1'
 var assignment1Name = 'Initiative1'
-var initiative2Name = 'Initiative2' //level2
-var assignment2Name = 'Initiative2' //level2
+var initiative2Name = 'Initiative2' //Intermediate
+var assignment2Name = 'Initiative2' //Intermediate
 
 // OUTPUTS
 output initiative1ID string = initiative1.id
-output initiative2ID string = initiative2.id //level2
+output initiative2ID string = initiative2.id //Intermediate
 output assignment1ID string = assignment1.id
-output assignment2ID string = assignment2.id //level2
+output assignment2ID string = assignment2.id //Intermediate
 
 // RESOURCES
 resource policy 'Microsoft.Authorization/policyDefinitions@2020-09-01' = {
-  //level2
+  //Intermediate
   name: 'addTagToRG'
   properties: {
     displayName: 'Add tag to resource group'
@@ -164,7 +164,7 @@ resource initiative1 'Microsoft.Authorization/policySetDefinitions@2020-09-01' =
 }
 
 resource initiative2 'Microsoft.Authorization/policySetDefinitions@2020-09-01' = {
-  //level2
+  //Intermediate
   name: initiative2Name
   properties: {
     policyType: 'Custom'
@@ -231,7 +231,7 @@ resource assignment1 'Microsoft.Authorization/policyAssignments@2020-09-01' = {
 }
 
 resource assignment2 'Microsoft.Authorization/policyAssignments@2020-09-01' = {
-  //level2
+  //Intermediate
   name: assignment2Name
   location: assignmentIdentityLocation
   identity: {

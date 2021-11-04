@@ -1,4 +1,4 @@
-# Azure-Policy-As-Code/Bicep/Learn/Level3
+# Azure-Policy-As-Code/Bicep/Learn/Advanced
 
 * Uses built-in policies and custom policies
 * Uses multiple initiatives and assignments
@@ -9,12 +9,12 @@
 * Targeting multiple Azure environments with authentication via GitHub secrets
 * Uses parameter files for environment-specfic values passed during deployment
 
-
 ## Parameters
 
 **Defaults**
+
 ```bicep
-param policySource string = 'csc/azure-policy-as-code'
+param policySource string = 'demo/azure-policy-as-code'
 param policyCategory string = 'Custom'
 param assignmentEnforcementMode string = 'Default'
 param assignmentIdentityLocation string = 'eastus'
@@ -36,6 +36,7 @@ param listOfAllowedSKUs array = [
 ```
 
 **Environment-specific**
+
 * params-devtest.json
 * params-nonprod.json
 * params-prod.json
@@ -43,6 +44,7 @@ param listOfAllowedSKUs array = [
 ## Deployment Steps
 
 **CLI**
+
 ```s
 # optional step to view the JSON/ARM template
 az bicep build -f ./main.bicep
@@ -68,6 +70,7 @@ az policy state trigger-scan --no-wait
 ```
 
 **GitHub Actions**
+
 ```yaml
 name: Bicep-CD
 on:
@@ -95,7 +98,7 @@ jobs:
       uses: azure/CLI@v1
       with:
         inlineScript: |
-          az deployment sub create -n devtest-bicep-cd -f ./Bicep/Level3/main.bicep -l eastus -p ./Bicep/Level3/params-devtest.json -o none
+          az deployment sub create -n devtest-bicep-cd -f ./Bicep/Advanced/main.bicep -l eastus -p ./Bicep/Advanced/params-devtest.json -o none
     - name: Sleep for 30s
       if: ${{ steps.bicepCD.outcome == 'failure' && steps.bicepCD.conclusion == 'success' }}
       uses: juliangruber/sleep-action@v1
@@ -106,7 +109,7 @@ jobs:
       uses: azure/CLI@v1
       with:
         inlineScript: |
-          az deployment sub create -n devtest-bicep-cd -f ./Bicep/Level3/main.bicep -l eastus -p ./Bicep/Level3/params-devtest.json -o none
+          az deployment sub create -n devtest-bicep-cd -f ./Bicep/Advanced/main.bicep -l eastus -p ./Bicep/Advanced/params-devtest.json -o none
 
   NONPROD-BICEP-CD:
     needs: DEVTEST-BICEP-CD
@@ -123,7 +126,7 @@ jobs:
       uses: azure/CLI@v1
       with:
         inlineScript: |
-          az deployment sub create -n nonprod-bicep-cd -f ./Bicep/Level3/main.bicep -l eastus -p ./Bicep/Level3/params-nonprod.json -o none
+          az deployment sub create -n nonprod-bicep-cd -f ./Bicep/Advanced/main.bicep -l eastus -p ./Bicep/Advanced/params-nonprod.json -o none
     - name: Sleep for 30s
       if: ${{ steps.bicepCD.outcome == 'failure' && steps.bicepCD.conclusion == 'success' }}
       uses: juliangruber/sleep-action@v1
@@ -134,7 +137,7 @@ jobs:
       uses: azure/CLI@v1
       with:
         inlineScript: |
-          az deployment sub create -n nonprod-bicep-cd -f ./Bicep/Level3/main.bicep -l eastus -p ./Bicep/Level3/params-nonprod.json -o none
+          az deployment sub create -n nonprod-bicep-cd -f ./Bicep/Advanced/main.bicep -l eastus -p ./Bicep/Advanced/params-nonprod.json -o none
 
   PROD-BICEP-CD:
     needs: NONPROD-BICEP-CD
@@ -151,7 +154,7 @@ jobs:
       uses: azure/CLI@v1
       with:
         inlineScript: |
-          az deployment sub create -n prod-bicep-cd -f ./Bicep/Level3/main.bicep -l eastus -p ./Bicep/Level3/params-prod.json -o none
+          az deployment sub create -n prod-bicep-cd -f ./Bicep/Advanced/main.bicep -l eastus -p ./Bicep/Advanced/params-prod.json -o none
     - name: Sleep for 30s
       if: ${{ steps.bicepCD.outcome == 'failure' && steps.bicepCD.conclusion == 'success' }}
       uses: juliangruber/sleep-action@v1
@@ -162,7 +165,7 @@ jobs:
       uses: azure/CLI@v1
       with:
         inlineScript: |
-          az deployment sub create -n prod-bicep-cd -f ./Bicep/Level3/main.bicep -l eastus -p ./Bicep/Level3/params-prod.json -o none
+          az deployment sub create -n prod-bicep-cd -f ./Bicep/Advanced/main.bicep -l eastus -p ./Bicep/Advanced/params-prod.json -o none
 ```
 
 ### Azure Resource Manager (ARM) Template References

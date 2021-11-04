@@ -13,7 +13,7 @@ output policyID string = policy.id
 
 // RESOURCES
 resource policy 'Microsoft.Authorization/policyDefinitions@2020-09-01' = {
-  //level2
+  //Intermediate
   name: 'addTagToRG'
   properties: {
     displayName: 'Add tag to resource group'

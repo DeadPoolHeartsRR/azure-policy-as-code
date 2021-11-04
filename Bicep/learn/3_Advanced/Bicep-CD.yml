@@ -24,7 +24,7 @@ jobs:
       uses: azure/CLI@v1
       with:
         inlineScript: |
-          az deployment sub create -n devtest-bicep-cd -f ./Bicep/Level3/main.bicep -l eastus -p ./Bicep/Level3/params-devtest.json -o none
+          az deployment sub create -n devtest-bicep-cd -f ./Bicep/Advanced/main.bicep -l eastus -p ./Bicep/Advanced/params-devtest.json -o none
     - name: Sleep for 30s
       if: ${{ steps.bicepCD.outcome == 'failure' && steps.bicepCD.conclusion == 'success' }}
       uses: juliangruber/sleep-action@v1
@@ -35,7 +35,7 @@ jobs:
       uses: azure/CLI@v1
       with:
         inlineScript: |
-          az deployment sub create -n devtest-bicep-cd -f ./Bicep/Level3/main.bicep -l eastus -p ./Bicep/Level3/params-devtest.json -o none
+          az deployment sub create -n devtest-bicep-cd -f ./Bicep/Advanced/main.bicep -l eastus -p ./Bicep/Advanced/params-devtest.json -o none
 
   NONPROD-BICEP-CD:
     needs: DEVTEST-BICEP-CD
@@ -52,7 +52,7 @@ jobs:
       uses: azure/CLI@v1
       with:
         inlineScript: |
-          az deployment sub create -n nonprod-bicep-cd -f ./Bicep/Level3/main.bicep -l eastus -p ./Bicep/Level3/params-nonprod.json -o none
+          az deployment sub create -n nonprod-bicep-cd -f ./Bicep/Advanced/main.bicep -l eastus -p ./Bicep/Advanced/params-nonprod.json -o none
     - name: Sleep for 30s
       if: ${{ steps.bicepCD.outcome == 'failure' && steps.bicepCD.conclusion == 'success' }}
       uses: juliangruber/sleep-action@v1
@@ -63,7 +63,7 @@ jobs:
       uses: azure/CLI@v1
       with:
         inlineScript: |
-          az deployment sub create -n nonprod-bicep-cd -f ./Bicep/Level3/main.bicep -l eastus -p ./Bicep/Level3/params-nonprod.json -o none
+          az deployment sub create -n nonprod-bicep-cd -f ./Bicep/Advanced/main.bicep -l eastus -p ./Bicep/Advanced/params-nonprod.json -o none
 
   PROD-BICEP-CD:
     needs: NONPROD-BICEP-CD
@@ -80,7 +80,7 @@ jobs:
       uses: azure/CLI@v1
       with:
         inlineScript: |
-          az deployment sub create -n prod-bicep-cd -f ./Bicep/Level3/main.bicep -l eastus -p ./Bicep/Level3/params-prod.json -o none
+          az deployment sub create -n prod-bicep-cd -f ./Bicep/Advanced/main.bicep -l eastus -p ./Bicep/Advanced/params-prod.json -o none
     - name: Sleep for 30s
       if: ${{ steps.bicepCD.outcome == 'failure' && steps.bicepCD.conclusion == 'success' }}
       uses: juliangruber/sleep-action@v1
@@ -91,4 +91,4 @@ jobs:
       uses: azure/CLI@v1
       with:
         inlineScript: |
-          az deployment sub create -n prod-bicep-cd -f ./Bicep/Level3/main.bicep -l eastus -p ./Bicep/Level3/params-prod.json -o none
+          az deployment sub create -n prod-bicep-cd -f ./Bicep/Advanced/main.bicep -l eastus -p ./Bicep/Advanced/params-prod.json -o none

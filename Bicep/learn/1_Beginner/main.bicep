@@ -1,7 +1,7 @@
 targetScope = 'subscription'
 
 // PARAMETERS
-param policySource string = 'csc/azure-policy-as-code'
+param policySource string = 'demo/azure-policy-as-code'
 param policyCategory string = 'Custom'
 param assignmentEnforcementMode string = 'Default'
 param listOfAllowedLocations array = [

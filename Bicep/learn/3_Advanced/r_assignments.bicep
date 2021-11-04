@@ -8,9 +8,9 @@ param listOfAllowedLocations array
 param listOfAllowedSKUs array
 param mandatoryTag1Key string
 param mandatoryTag1Value string
-param initiative1ID string //level3
-param initiative2ID string //level3
-param nonComplianceMessageContactEmail string //level3
+param initiative1ID string //Advanced
+param initiative2ID string //Advanced
+param nonComplianceMessageContactEmail string //Advanced
 
 // VARIABLES
 var assignment1Name = 'Initiative1'
@@ -31,7 +31,7 @@ resource assignment1 'Microsoft.Authorization/policyAssignments@2020-09-01' = {
       source: policySource
       version: '0.1.0'
     }
-    policyDefinitionId: initiative1ID //level3
+    policyDefinitionId: initiative1ID //Advanced
     parameters: {
       listOfAllowedLocations: {
         value: listOfAllowedLocations
@@ -63,7 +63,7 @@ resource assignment2 'Microsoft.Authorization/policyAssignments@2020-09-01' = {
       source: policySource
       version: '0.1.0'
     }
-    policyDefinitionId: initiative2ID //level3
+    policyDefinitionId: initiative2ID //Advanced
     parameters: {
       tagName: {
         value: mandatoryTag1Key
@@ -72,7 +72,7 @@ resource assignment2 'Microsoft.Authorization/policyAssignments@2020-09-01' = {
         value: mandatoryTag1Value
       }
     }
-    nonComplianceMessages: [ //level3
+    nonComplianceMessages: [ //Advanced
       {
         message: 'Your Resource deployment is not compliant with the ${assignment1Name} policy. Please contact ${nonComplianceMessageContactEmail}'
       }
