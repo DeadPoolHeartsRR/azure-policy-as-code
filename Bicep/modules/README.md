@@ -1,19 +1,12 @@
 # Azure-Policy-As-Code/Bicep/Modules
 
-Get in touch :octocat:
-
-* Twitter: [@coder_au](https://twitter.com/coder_au)
-* LinkedIn: [@JesseLoudon](https://www.linkedin.com/in/jesseloudon/)
-* Web: [jloudon.com](https://jloudon.com)
-* GitHub: [@JesseLoudon](https://github.com/jesseloudon)
-
 Learning resources :books:
 * [https://docs.microsoft.com/en-us/azure/governance/policy/overview](https://docs.microsoft.com/en-us/azure/governance/policy/overview)
 * [policy definitions](https://docs.microsoft.com/en-us/azure/templates/microsoft.authorization/policydefinitions?tabs=bicep)
 * [policyset definitions (initiatives)](https://docs.microsoft.com/en-us/azure/templates/microsoft.authorization/policysetdefinitions?tabs=bicep)
 * [policy assignments](https://docs.microsoft.com/en-us/azure/templates/microsoft.authorization/policyassignments?tabs=bicep)
 
-## Blogs that might interest you :pencil:
+## Blogs that might interest you
 
 * [Global Azure: Policy as Code with Bicep for Enterprise Scale](https://jloudon.com/cloud/Global-Azure-Policy-as-Code-with-Bicep-for-Enterprise-Scale/)
 * [Azure Spring Clean: DINE to Automate your Monitoring Governance with Azure Monitor Metric Alerts](https://jloudon.com/cloud/Azure-Spring-Clean-DINE-to-Automate-your-Monitoring-Governance-with-Azure-Monitor-Metric-Alerts/)
@@ -40,7 +33,7 @@ az deployment sub create -f ./main.bicep -l eastus --confirm-with-what-if
 az policy state trigger-scan --no-wait
 ```
 
-> Note regarding Resources with dependencies on other resources e.g. Bicep role assignments for new service principals (SP) created by policy assignments will sometimes fail to find the new SP upon 1st run (even though a dependency exists between the resources). This role assignment failure will not reoccur upon a 2nd run of the main.bicep file. The same can apply for policy assignments, policy initiatives, and policy definitions.
+> Note regarding resources with dependencies on other resources e.g. Bicep role assignments for new service principals (SP) created by policy assignments will sometimes fail to find the new SP upon 1st run (even though a dependency exists between the resources). This role assignment failure will not reoccur upon a 2nd run of the main.bicep file. The same can apply for policy assignments, policy initiatives, and policy definitions.
 
 ### GitHub Actions Workflows
 
