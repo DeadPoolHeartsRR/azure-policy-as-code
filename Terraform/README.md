@@ -1,17 +1,10 @@
 # Azure-Policy-As-Code/Terraform
 
-Get in touch :octocat:
-
-* Twitter: [@coder_au](https://twitter.com/coder_au)
-* LinkedIn: [@JesseLoudon](https://www.linkedin.com/in/jesseloudon/)
-* Web: [jloudon.com](https://jloudon.com)
-* GitHub: [@JesseLoudon](https://github.com/jesseloudon)
-
 Learning resources :books:
 * [https://www.terraform.io/docs/providers/azurerm/index.html](https://www.terraform.io/docs/providers/azurerm/index.html)
 * [https://docs.microsoft.com/en-us/azure/governance/policy/overview](https://docs.microsoft.com/en-us/azure/governance/policy/overview)
 
-## Blogs that might interest you :pencil:
+## Blogs that might interest you
 
 * [Using GitHub Actions and Terraform for IaC Automation](https://jloudon.com/cloud/Using-GitHub-Actions-and-Terraform-for-IaC-Automation/)
 * [Azure Policy as Code with Terraform Part 1](https://jloudon.com/cloud/Azure-Policy-as-Code-with-Terraform-Part-1/)
